@@ -27,27 +27,13 @@ namespace App31
         public MainPage()
         {
             this.InitializeComponent();
-
-            
         }
 
         private async void button_Click(object sender, RoutedEventArgs e)
         {
-            string ver = await PlatformHacks.GetWindowsVersion();
-
-            Debug.WriteLine(ver);
-            // Create the message dialog and set its content
+            // This code is throwing:
+            string ver = await TestException.PlatformHacks.GetWindowsVersion();
             var messageDialog = new MessageDialog(ver);
-
-            //// Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
-
-            messageDialog.Commands.Add(new UICommand(
-                "Close"));
-
-            // Set the command to be invoked when escape is pressed
-            messageDialog.CancelCommandIndex = 0;
-
-            // Show the message dialog
             await messageDialog.ShowAsync();
 
         }

@@ -1,5 +1,4 @@
-﻿using Microsoft.ApplicationInsights;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,10 +28,6 @@ namespace App31
         /// </summary>
         public App()
         {
-            
-
-            WindowsAppInitializer.InitializeAsync();
-
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
